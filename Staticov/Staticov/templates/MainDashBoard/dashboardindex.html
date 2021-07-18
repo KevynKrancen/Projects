@@ -1,0 +1,383 @@
+{% load static %}
+<html> 
+  
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="{%static 'admindesign/img/logostaticov.png' %}" rel="icon">
+  <title>StatiCov | DashBoard</title>
+  <link href="{%static 'dashboard_design/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="{%static 'dashboard_design/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="{%static 'dashboard_design/css/ruang-admin.min.css' %}" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{%static 'dashboard_design/js/demo/chart-area-demo.js' %}" type="text/javascript"></script>
+  <script src="{%static 'dashboard_design/js/demo/chart-pie-demo.js' %}" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+ 
+
+</head>
+
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center"></a>
+        <div class="sidebar-brand-icon">
+          <img src="{%static 'admindesign/img/logostaticov.png' %}" width="68" height="68" style="vertical-align:right;margin:10px 77px">
+        </div>
+      </a>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading text-gray-400 text-uppercase px-3 px-lg-10 py-6 font-weight-bold big headings-font-family text-center">תפריט</div>
+      <li class="nav-item">
+        <a class="nav-link text-center" href="index">
+          <i class="fa fa-home"></i>
+          <span>דף הבית</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-center" href="index">
+          <i class="fa fa-sign-out-alt"></i>
+          <span>יציאה</span>
+        </a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading text-gray-400 text-uppercase px-3 px-lg-10 py-6 font-weight-bold big headings-font-family text-center">עזרה</div>
+      <li class="nav-item">
+        <a class="nav-link text-center" href="https://youtu.be/nD1A_lXAynM">
+          <i class="fa fa-video-camera"></i>
+          <span>סרטון הדרכה</span>
+        </a>
+      <li class="nav-item">
+        <a class="nav-link text-center" href="contact">
+          <i class="fa fa-phone-square"></i>
+          <span>צור קשר</span>
+        </a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="version" id="version-ruangadmin"></div>
+    </ul>
+    <!--Sidebar-->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <form class="form-control mr-sm-1">
+          {% for item in data %}
+            <marquee direction="right" bgcolor="white" width="600">{{item.popupmsg}}</marquee>
+          {% endfor %}
+        </form>
+        <nav class="navbar navbar-expand flex-row navbar-light bg-navbar topbar mb-4 static-top">
+          <ul class="navbar-nav ml-auto">
+          </ul>
+          <form class="form-inline">
+            <!--div class="md-form my-0 my-2 my-lg-0 ml-auto"-->
+              <input class="form-control mr-sm-1" type="text" placeholder="...חיפוש" aria-label="search">
+          </form>
+       </nav>
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800 text-align:center"><h1>קורונה בישראל - תמונת מצב</h1>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index">דף הבית</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
+          </div>
+
+          <div class="row mb-3 text-center">
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col mr-2">
+                      <img src="{%static 'dashboard_design/img/israelflag.png' %}" width="25" height="25">
+                      <div class="text-xl font-weight-bold text-uppercase mb-1">סה"כ נדבקים</div>
+                      <div class="h5 mb-0 font-weight-bold text-danger">487,680</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                        <span>מאז תחילת הקורונה בישראל</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4 text-center">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <img src="{%static 'dashboard_design/img/israelflag.png' %}" width="25" height="25">
+                      <div class="text-xl font-weight-bold text-uppercase mb-1">אתמול</div>
+                      <div class="h5 mb-0 font-weight-bold text-danger">5,047</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-success mr-2"><!--i class="fas fa-arrow-down"></i></span-->
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- New User Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4 text-center">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <img src="{%static 'dashboard_design/img/israelflag.png' %}" width="25" height="25">
+                      <div class="text-xl font-weight-bold text-uppercase mb-1">חולים קשה</div>
+                      <div class="h5 mb-0 font-weight-bold text-danger">1,029</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-danger mr-2"><i class="fas fa-arrow-up"></i></span>
+                        <span>+17 מאתמול</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4 text-center">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <img src="{%static 'dashboard_design/img/israelflag.png' %}" width="25" height="25">
+                      <div class="text-xl font-weight-bold text-uppercase mb-1">מתים</div>
+                      <div class="h5 mb-0 font-weight-bold text-danger">3,651</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-danger mr-2"><i class="fas fa-arrow-up"></i></span>
+                        <span>+4 מאתמול</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">נתונים אחרונים 2020</h6>
+                  <div class="dropdown no-arrow">
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                      aria-labelledby="dropdownMenuLink">
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="line-chart" width="600" height="200" style="margin:10px;"></canvas>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Pie Chart-->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between align-items-center">
+                  <div class="dropdown no-arrow text-danger">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart-pie">
+                    <canvas id="doughnut-chart" width="1000" height="600" ></canvas>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- message Example -->
+            <div class="col-xl-8 col-lg-7 mb-4 text-center">
+              <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between text-center">
+                  <h6 class="m-0 font-weight-bold text-primary">מבזקים ועדכונים</h6>
+                  <a class="m-0 float-right btn btn-danger btn-sm" href="#">ראה\י עוד... <i
+                      class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>כותרת</th>
+                        <th></th>
+                        <th>תאריך</th>
+                        <th></th>
+                        <th></th>
+                        <th>פרטים</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>שיא חדש? 1,029 חולי קורונה מאושפזים במצב קשה</td>
+                        <td></td>
+                        <td>10.1.2021</td>
+                        <td></td>
+                        <td><span class="badge badge-success">חדש</span></td>
+                        <td><a href="https://www.ynet.co.il/news/article/ryXHsZdRv#autoplay" class="btn btn-sm btn-primary">קישור</a></td>
+                      </tr>
+                      <tr>
+                        <td>סופ"ש ראשון לסגר המהודק - 9000 דוחות בעשר שעות</td>
+                        <td></td>
+                        <td>9.1.2021</td>
+                        <td></td>
+                        <td><span class="badge badge-success">חדש</span></td>
+                        <td><a href="https://www.ynet.co.il/news/article/B1DoXwv0D#autoplay" class="btn btn-sm btn-primary">קישור</a></td>
+                      </tr>
+                      <tr>
+                        <td>לקראת מחסור בחיסונים: משרד הבריאות אישר לתת מנה שניה של חיסון מחברה אחרת</td>
+                        <td></td>
+                        <td>7.1.2021</td>
+                        <td></td>
+                        <td><span class="badge badge-danger">ישן יותר</span></td>
+                        <td><a href="https://www.ynet.co.il/health/article/SJgdzQN0P#autoplay" class="btn btn-sm btn-primary">קישור</a></td>
+                      </tr>
+                      <tr>
+                        <td>הסגר המהודק יחל בחצות, זו מפת המחסומים</td>
+                        <td></td>
+                        <td>7.1.2021</td>
+                        <td></td>
+                        <td><span class="badge badge-danger">ישן יותר</span></td>
+                        <td><a href="https://www.ynet.co.il/news/article/B1vzoS4Cv#autoplay" class="btn btn-sm btn-primary">קישור</a></td>
+                      </tr>
+                      <tr>
+                        <td>מסתמן: קופות החולים יקימו מתחמי חיסון משותפים בפריפריה</td>
+                        <td></td>
+                        <td>18.12.2020</td>
+                        <td></td>
+                        <td><span class="badge badge-danger">ישן יותר</span></td>
+                        <td><a href="https://www.ynet.co.il/news/article/HJDh11115hv" class="btn btn-sm btn-primary">קישור</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+            <!-- Line Chart graph-->
+            <div class="col-xl-4 col-lg-5 ">
+              <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <img src="{%static 'images/place.png' %}" width="40px" height="40px">
+                  <h6 class="m-0 font-weight-bold text-primary">חודשים אחרונים</h6>
+                  <div class="dropdown no-arrow">
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">ירושלים
+                      <div class="small float-right"><b>12,685</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-gray-500">בני ברק
+                      <div class="small float-right"><b>3,163</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="70"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-gray-500">מודיעין עילית
+                      <div class="small float-right"><b>2,235</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 55%" aria-valuenow="55"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-gray-500">תל אביב-יפו
+                      <div class="small float-right"><b>1,859</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-gray-500">בית שמש
+                      <div class="small float-right"><b>1,813</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 47%" aria-valuenow="30"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-gray-500">חיפה
+                      <div class="small float-right"><b>1,783</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 43%" aria-valuenow="30"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-gray-500">פתח תקווה
+                      <div class="small float-right"><b>1,648</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="30"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--Section: Contact v.2-->
+<section class="section">
+  <!--Section heading-->
+  <div class="card" style="vertical-align:center;margin:30px 110px; text-align:center">
+    <div class="card-body">
+      <!--Google map-->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d579070.2277487356!2d35.467928790363594!3d31.847857867160222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1siw!2sus!4v1608494102280!5m2!1siw!2sus" width="950" height="380" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Section: Contact v.2-->
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <script src="{%static 'dashboard_design/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{%static 'dashboard_design/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{%static 'dashboard_design/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+  <script src="{%static 'dashboard_design/js/ruang-admin.min.js' %}"></script>
+  <script src="{%static 'dashboard_design/vendor/chart.js/Chart.min.js' %}"></script>
+  <script src="{%static 'dashboard_design/js/demo/chart-area-demo.js' %}"></script>  
+  <script src="{%static 'dashboard_design/js/demo/chart-pie-demo.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="{% static 'admindesign/css/custom.css' %}">
+</body>
+
+</html>

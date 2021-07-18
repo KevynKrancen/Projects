@@ -1,0 +1,260 @@
+{% load static %}  
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="">
+        <link href="{%static 'images/logostaticov.png' %}" rel="icon">
+        <title>שאלון תסמינים</title>
+      </head>
+</head>
+<div class="ripple-background">
+  <div class="circle xxlarge shade1"></div>
+  <div class="circle xlarge shade2"></div>
+  <div class="circle large shade3"></div>
+  <div class="circle mediun shade4"></div>
+  <div class="circle small shade5"></div>
+</div>
+<div class="login-form">
+    <img src="{% static 'images/logostaticov.png' %}" width="75" height="75" id="icon" alt="User Icon"/>
+    <div class="form-container">
+      <div class="form-heading">
+        שאלון תסמינים
+      </div>
+      <img src="{% static 'images/logostaticov.png' %}" width="75" height="77" id="icon" alt="User Icon"/>
+      <div class="form-element">
+        <form action="/Staticov/symptomesformcheck" method="POST" id="login-form" class="form form-login" autocomplete="off" role="main">
+        {% csrf_token %}
+            <!--label class="form-label" for="contact-symptom">האם חווה כאבי ראש?</label-->
+                <p><strong>האם חווה כאבי ראש?</strong></p>
+                <select id="head" name="head" class="form-control required">
+                    <option selected></option>
+                    <option>כן</option>
+                    <option>לא</option>
+                </select>
+                <br><br>
+                <p><strong>האם יש חום גבוהה?</strong></p>
+                <select name="hot" id="hot">
+                    <option>כן</option>
+                    <option>לא</option>
+                </select>
+                <br><br>
+                <p><strong>האם יש אובדן בחוש הטעם ו\או הריח?</strong></p>
+                <select name="smell" id="smell">
+                    <option>כן</option>
+                    <option>לא</option>
+                </select>
+                <br><br>
+                <p><strong>האם חווה כאבים כלשהם?</strong></p>
+                <select name="hurts" id="hurts">
+                    <option>כן</option>
+                    <option>לא</option>
+                </select>
+        <div class="form-element">
+        <button id="login-submit">בדיקה</button> 
+        {% if messages %}
+        {% for message in messages %}<script>alert("{% for message in messages %}{{ message }}\n{% endfor %}");</script>
+        {% endfor %}
+        {% endif %}
+      </form>
+    </div>
+  </div>
+
+  <style>
+      @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css";
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway";
+
+* {
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+}
+
+body {
+  background:#a2a397;
+}
+.login-form {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:350px;
+  height:px;
+  background:#f5f5f5;
+  overflow:hidden;
+  box-shadow:10px 6px 10px #555;
+}
+
+.login-form:before,.login-form:after {
+  content:"";
+  position:absolute;
+  top:0px;
+  width:150%;
+  height:150px;
+} 
+
+.login-form:before {
+  background:#375fbb;
+  height:180px;
+  transform: translate(-80px,-100px) rotate(-28deg);
+}
+.login-form:after {
+  background:rgba(0,0,0,0.38);
+  transform: translate(0px,-55px) rotate(20deg);
+  z-index:2;
+}
+
+.form-container {
+  margin-top:80px;
+  height:calc(100% - 180px);
+  padding:0px 40px;
+  text-align:center;
+  font-family:"Open Sans","Raleway",sans-serif; 
+}
+.form-container .form-element {
+  position:relative;
+  margin:15px 0px;
+}
+
+.form-container .form-heading {
+  margin-bottom:30px;
+  font-size:32px;
+  font-weight:600;
+  color:#375fbb;
+  font-family:"Open Sans","Raleway",sans-serif;  
+}
+.form-container .form-element input {
+  width:100%;
+  font-size:18px;
+  padding:12px;
+  text-indent:50px;
+  background:#ddd;
+  border:none;
+  outline:none;
+}
+.form-container .form-element label {
+  position:absolute;
+  top:50%;
+  left:15px;
+  transform:translateY(-50%);
+  color:#888;
+}
+.form-container .form-element label:after {
+  content:"";
+  position:absolute;
+  top:-5px;
+  left:30px;
+  width:2px;
+  height:25px;
+  background:#aaa;
+ }
+
+.form-container .form-element button {
+  width:80%;
+  padding:12px;
+  font-size:18px;
+  border:none;
+  outline:none;
+  background:#557ace;
+  color:#f5f5f5;
+  cursor:pointer;
+  text-transform:uppercase;
+  font-family:"Open Sans","Raleway",sans-serif;
+  font-weight:600;  
+}
+
+.form-container .form-element a {
+  color:#004ddc;
+  font-weight:600;
+  font-size:15px;
+  font-family:"Open Sans","Raleway",sans-serif;
+  text-decoration:none;
+}
+.form-container .form-element.signup-link {
+  position:absolute;
+  width:calc(100% - 80px);
+  bottom:5px;
+}
+body{
+  background: #3399ff;
+}
+
+
+.circle{
+  position: absolute;
+  border-radius: 130%;
+  background: white;
+  animation: ripple 8s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small{
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium{
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large{
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge{
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge{
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1{
+  opacity: 0.2;
+}
+.shade2{
+  opacity: 0.5;
+}
+
+.shade3{
+  opacity: 0.7;
+}
+
+.shade4{
+  opacity: 0.8;
+}
+
+.shade5{
+  opacity: 0.9;
+}
+
+@keyframes ripple{
+  0%{
+    transform: scale(0.8);
+  }
+  
+  50%{
+    transform: scale(1.2);
+  }
+  
+  100%{
+    transform: scale(0.8);
+  }
+}
+
+  </style>

@@ -1,0 +1,606 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+<head>
+    {% if messages %}
+        {% for message in messages %}<script>alert("{% for message in messages %}{{ message }}\n{% endfor %}");</script>
+        {% endfor %}
+        {% endif %}
+	<meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <!-- Site Title  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+    <link href="{%static 'admindesign/img/logostaticov.png' %}" rel="icon">
+    <title>STATICOV | Coronavirus COVID-19 Prevention & Informatics</title>
+    <!-- Bundle and Base CSS -->
+    <link rel="stylesheet"  href="{% static 'assets/css/styles-azure.css' %}">
+    <link rel="stylesheet"  href="{% static 'assets/css/bundle.css' %}">
+</head>
+
+<body class="nk-body" dir="rtl">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v9.0" nonce="JFESar5r"></script>
+
+    <div class="nk-wrap">
+        <header class="nk-header bg-light-grad-a has-overlay" id="home">
+            <div class="overlay shape shape-line-a"></div><!-- Overlay Shape -->
+            <div class="nk-navbar is-light is-sticky" id="navbar">
+                <div class="container">
+                    <div class="nk-navbar-wrap">
+                        <div class="nk-navbar-logo logo">
+                            <a href="./" class="logo-link">
+                                <img class="logo-dark" src="{% static 'images/logostaticov.png' %}">
+                                <img class="logo-light" src="{% static 'images/logostaticov.png' %}">
+                            </a>
+                        </div><!-- .nk-navbar-logo -->
+                        <div class="nk-navbar-toggle d-lg-none">
+                            <a href="#" class="toggle" data-menu-toggle="navbar-menu"><em class="icon-menu icon ni ni-menu"></em><em class="icon-close icon ni ni-cross"></em></a>
+                        </div><!-- .nk-navbar-toggle -->
+                        <nav class="nk-navbar-menu nk-navbar-menu-between" id="navbar-menu">
+                            <ul class="nk-menu">
+                                <li class="nk-menu-item"><a class="scrollto nav-link nk-menu-link" href="#symptoms">תסמינים</a></li>
+                                <li class="nk-menu-item"><a class="scrollto nav-link nk-menu-link" href="#prevention">איך לשמור על עצמנו?</a></li>
+                                <li class="nk-menu-item"><a class="scrollto nav-link nk-menu-link" href="#protect">מותר&amp;אסור</a></li>
+                                <li class="nk-menu-item"><a class="scrollto nav-link nk-menu-link" href="#coping">התמודדות</a></li>
+                                <li class="nk-menu-item"><a href="#" data-offcanvas-toggle="sidebar-info" class="btn btn-sm toggle-offcanvas"> נתונים וסטטיסטיקות</a>
+                                    <ul class="nk-menu-dropdown nk-menu-sub">
+                                        <li class="nk-menu-item"><a class="nav-link nk-menu-link" href="MainDashBoard">גרפים</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nk-menu-item"><a class="scrollto nav-link nk-menu-link" href="#spread">אודותינו</a></li>
+                                <li class="nk-menu-item"><a class="scrollto nav-link nk-menu-link" href="/Staticov/rate">דירוג האתר</a></li>
+                            </ul>
+                            <ul class="nk-menu-btns">
+                                <li class="nk-menu-item"><a href="/Staticov/registration" class="btn btn-sm tog"> הרשמה וכניסה</a></li>
+                                <div class="fb-share-button" data-href="http://localhost:8000/Staticov/index" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2FStaticov%2Findex&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share Staticov </a></div>
+                            </ul>
+                        </nav><!-- .nk-navbar-menu -->
+                    </div><!-- .nk-navbar-wrap -->
+                </div><!-- .container -->
+            </div><!-- .nk-navbar -->
+            <div class="nk-banner-s2">
+                <div class="container">
+                    <div class="row g-gs my-auto align-items-center justify-content-between">
+                        <div class="col-lg-5 order-lg-last">
+                            <div class="nk-banner-s2-image">
+                                <img src="{% static 'images/gfx/header-b.png' %}" alt="">
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-lg-7">
+                            <div class="nk-banner-s2-block pl-xl-5">
+                                <div class="content text-center">
+                                    <h6 class="sub-title"><span class="badge badge-danger">Covid-19</span> <span>Coronavirus</span></h6>
+                                    <h1 class="title text-center">יחד נמנע את התפשטות הנגיף<br class="d-none d-sm-block">הישאר בבית, הישאר בטוח</h1>
+                                    <p>הדרך הטובה ביותר למנוע ולהאט את התפשטות הנגיף היא לקבל החלטות מושכלות היטב לגבי נגיף ה- COVID-19. 
+                                    הגנו על עצמכם ועל אחרים מפני זיהום 
+                                    על ידי שטיפת הידיים לפחות 20 שניות וללא נגיעה בפנים. </p>
+                                </div><!-- .content -->
+                            </div><!-- .nk-banner-block -->
+                </div><!-- .container -->
+            </div><!-- .nk-banner -->
+        </header><!-- .nk-header -->  
+        <main class="nk-pages">
+            <section class="section section-l bg-light section-spread pb-0 ov-h has-overlay" id="">
+                <div class="overlay bg-white h-40 bottom"></div><!-- Overlay Shape -->
+                <div class="container">
+                    <div class="section-head-s2 text-center wide-md">
+                        <h5 class="subtitle">כיצד מתפשט וירוס הקורונה</h5>
+                        <h2 class="title">שידור של  <br class="d-sm-none"> COVID-19</h2>
+                    </div><!-- .section-head -->
+                    <div class="section-content">
+                        <div class="row g-gs justify-content-center">
+                            <div class="col-md-8 col-lg-4">
+                                <div class="box box-alt">
+                                    <div class="box-gfx">
+                                        <img src="{% static 'images/gfx/spread-azure-c.png' %}" alt="">
+                                    </div>
+                                    <div class="box-content text-center">
+                                        <h4 class="title text-center">הדבקה טיפתית</h4>
+                                        <p>ההדבקה מאדם לאדם היא בעיקר טיפתית, בדומה להדבקה בשפעת: רסיסי טיפות שמקורם באדם נגוע (שהשתעל או שהתעטש ואפילו אם דיבר) נושאים את הנגיף באוויר וחודרים למערכת הנשימה של בני אדם לא נגועים. מכיוון שטווח הפיזור של הרסס הטיפתי הזה הוא מוגבל, הרי ששמירה על ריחוק חברתי - נוסף על עטיית מסכה - היא אמצעי יעיל למניעת הדבקה.</p>
+                                    </div>
+                                </div><!-- .box -->
+                            </div><!-- .col -->
+                            <div class="col-md-8 col-lg-4">
+                                <div class="box box-alt">
+                                    <div class="box-gfx">
+                                        <img src="{% static 'images/gfx/spread-azure-b.png' %}" alt="">
+                                    </div>
+                                    <div class="box-content text-center">
+                                        <h4 class="title text-center">כמה זמן נשארים נגיפי קורונה פעילים על חפצים ועל משטחים?</h4>
+                                        <p>נראה שנגיפי קורונה נותרים פעילים על חפצים ועל משטחים בין כמה שעות לכמה ימים - בהתאם לסוג המשטח או החפץ ובתלות בתנאי הסביבה והטמפרטורה.
+                                            זוהי גם הסיבה להנחיה לנקות לעיתים קרובות משטחים בבית ובמקום העבודה. הוכח שחיטוי משטחים בחומרי חיטוי ביתיים מכחיד את הנגיף.</p>
+                                    </div>
+                                </div><!-- .box -->
+                            </div><!-- .col -->
+                            <div class="col-md-8 col-lg-4">
+                                <div class="box box-alt">
+                                    <div class="box-gfx">
+                                        <img src="{% static 'images/gfx/spread-azure-a.png' %}" alt="">
+                                    </div>
+                                    <div class="box-content text-center">
+                                        <h4 class="title text-center">הדבקה במגע</h4>
+                                        <p>דרך הדבקה נוספת, משמעותית הרבה פחות, היא באמצעות מגע, למשל עם כף יד שחולה קורונה התעטש לתוכה. מכאן החשיבות של רחיצת ידיים תכופה במים ובסבון או באלכוג'ל. זוהי גם הסיבה לכך שניתנה ההנחיה להימנע מללחוץ ידיים ומלגעת בפנים. כאמור, הדבקה באמצעות מגע היא משנית בחשיבותה בהשוואה להדבקה טיפתית דרך האוויר.</p>
+                                    </div>
+                                </div><!-- .box -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .section-content -->
+                </div><!-- .container -->
+            </section><!-- .section -->
+
+            <section class="section section-l bg-white section-symptoms" id="symptoms">
+                <div class="container">
+                    <div class="section-head-s2 section-head-s2-sm">
+                        <h5 class="subtitle text-center">מהם הסימפטומים של  COVID-19?</h5>
+                        <h2 class="title text-center">תסמינים של וירוס הקורונה</h2>
+                    </div><!-- .section-head -->
+                    <div class="section-content">
+                        <div class="row g-gs align-items-center">
+                            <div class="col-lg-6 order-lg-last">
+                                <div class="gfx2">
+                                    <img src="{% static 'images/gfx/gfx-b.png' %}" alt="">
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-lg-6">
+                                <div class="text-block-s2 text-md-right">
+                                    <p>התסמינים השכיחים ביותר של COVID-19 הם חום, עייפות ושיעול יבש. לחולים מסוימים יש כאבים, גודש באף, נזלת, כאב גרון או שלשולים. תסמינים אלה הם בדרך כלל קלים ומתחילים בהדרגה. כמו כן הסימפטומים עשויים להופיע 2-14 יום לאחר החשיפה.</p>
+                                </div><!-- .section-head -->
+                                <div class="row g-gs justify-content-center">
+                                    <div class="col-12">
+                                        <div class="box8">
+                                            <div class="box8-gfx">
+                                                <img src="{% static 'images/gfx/symptom-a.png' %}" alt="">
+                                            </div>
+                                            <div class="box8-content text-md-right">
+                                                <p><strong>חום גבוהה</strong></p>
+                                            </div>
+                                        </div><!-- .box8 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box8">
+                                            <div class="box8-gfx">
+                                                <img src="{% static 'images/gfx/symptom-b.png' %}" alt="">
+                                            </div>
+                                            <div class="box8-content text-md-right">
+                                                <p><strong>שיעול מתמשך</strong></p>
+                                            </div>
+                                        </div><!-- .box8 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box8">
+                                            <div class="box8-gfx">
+                                                <img src="{% static 'images/gfx/symptom-c.png' %}" alt="">
+                                            </div>
+                                            <div class="box8-content">
+                                                <p><strong>קשיי נשימה</strong></p>
+                                            </div>
+                                        </div><!-- .box8 -->
+                                    </div><!-- .col -->
+                                </div><!-- .row -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .section-content -->
+                    
+                    <div class="section-cta section-cta-boxed bg-light">
+                        <div class="row g-gs justify-content-center align-items-center">
+                            <div class="col-md-8 col-lg-8">
+                                <div class="notes">
+                                    <em class="icon ni ni-alert-fill-c"></em>
+                                    <p><strong>הישאר בבית והתקשר לרופא שלך: </strong>אם את/ה חושב\ת שנחשפת ל- COVID-19 ופיתחתם חום ותופעות כלשהן, כגון קשיי קשיים או קשיי נשימה, התקשר לרופא המטפל בהקדם לייעוץ רפואי.</p>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-4 col-lg-4">
+                                <div class="d-flex justify-content-md-end ml-sm-5 ml-4 pl-3 ml-md-0 pl-md-0">
+                                    <a href="/Staticov/checksymptoms" class="btn -offcanvas"><span>לשאלון תסמינים לחץ כאן</span></a>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div>
+                </div><!-- .container -->
+            </section><!-- .section -->
+
+            <section class="section section-l bg-light section-advice has-overlay" id="prevention">
+                <div class="overlay shape shape-e"></div><!-- Overlay Shape -->
+                <div class="container">
+                    <div class="section-content text-center">
+                        <div class="row g-gs align-items-center">
+                            <div class="col-lg-5">
+                                <div class="gfx3">
+                                    <img src="{% static 'images/gfx/gfx-c.png' %}" alt="">
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-lg-7">
+                                <div class="section-head-s2">
+                                    <h5 class="subtitle text-center">איך לשמוך על עצמך</h5>
+                                    <h2 class="title text-center">מְנִיעָה &amp; עֵצָה</h2>
+                                    <p><strong>ניתן להתחסן כיום נגד נגיף הקורונה דרך קופות החולים</strong></p>
+                                </div><!-- .section-head -->
+                                <div class="row g-gs justify-content-center">
+                                    <div class="col-12">
+                                        <div class="box7">
+                                            <div class="box7-gfx">
+                                                <img src="{% static 'images/gfx/advice-a.png' %}" alt="">
+                                            </div>
+                                            <div class="box7-content">
+                                                <h6 class="title">היגיינת הידיים</h6>
+                                                <P>נקו את הידיים באופן קבוע ויסודי בעזרת שפשוף ידני על בסיס אלכוהול או שטפו אותם עם מים וסבון למשך 20 שניות לפחות.</P>
+                                            </div>
+                                        </div><!-- .box7 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box7">
+                                            <div class="box7-gfx">
+                                                <img src="{% static 'images/gfx/advice-b.png' %}" alt="">
+                                            </div>
+                                            <div class="box7-content">
+                                                <h6 class="title">שמרו על מרחק</h6>
+                                                <P>שמירת מרחק של לפחות 2 מטר בין אדם לאדם, לא להתקהל מעל כעשרה אנשים.</P>
+                                            </div>
+                                        </div><!-- .box7 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box7">
+                                            <div class="box7-gfx">
+                                                <img src="{% static 'images/gfx/advice-c.png' %}" alt="">
+                                            </div>
+                                            <div class="box7-content">
+                                                <h6 class="title">הימנעו מלגעת בפנים</h6>
+                                                <P>במהלך היום אנו נוגעים בהמון חפצים ומשטחים, לאחר מכן נוגעים גם באזור הפנים והאף - זה עלול להביא להידבקות בנגיף.</P>
+                                            </div>
+                                        </div><!-- .box7 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box7">
+                                            <div class="box7-gfx">
+                                                <img src="{% static 'images/gfx/advice-d.png' %}" alt="">
+                                            </div>
+                                            <div class="box7-content">
+                                                <h6 class="title">תרגול היגיינת נשימה</h6>
+                                                <P>שמור על היגיינת נשימה טובה יש לכסות את הפה והאף במרפק או ברקמה הכפופה בעת שיעול או עיטוש.</P>
+                                            </div>
+                                        </div><!-- .box7 -->
+                                    </div><!-- .col -->
+                                </div><!-- .row -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .section-content -->
+                </div><!-- .container -->
+            </section><!-- .section -->
+
+            <section class="section section-l bg-light section-protect has-overlay" id="protect">
+                <div class="overlay shape shape-d"></div><!-- Overlay Shape -->
+                <div class="container">
+                    <div class="section-head-s2 text-center wide-lg">
+                        <h5 class="subtitle">מותר &amp; אסור</h5>
+                        <h2 class="title">הגנו על עצמכם</h2>
+                        <p>אנא שימרו על המגבלות וההנחיות, נסו להשאר מעודכנים ככל הניתן. היו שותפים לתהליך ובכך נמנע כולנו את מקרה ההידבקות הבא.</p>
+                    </div><!-- .section-head -->
+                    <div class="section-content px-lg-5 mx-lg-4 text-md-right">
+                        <div class="row g-gs gx-m justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="row g-gs">
+                                    <div class="col-12">
+                                        <div class="box6 positive">
+                                            <div class="box6-gfx">
+                                                <img src="{% static 'images/gfx/dos-a.png' %}" alt="">
+                                            </div>
+                                            <div class="box6-text">
+                                                <h6 class="title text-md-right">שטפו את הידיים</h6>
+                                                <p>שמירה על היגיינת הידיים מפני חיידקים ונגיפים, תורמת לבריאותך ולבריאות הסובבים אותך.</p>
+                                            </div>
+                                        </div><!-- .box6 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box6 positive">
+                                            <div class="box6-gfx">
+                                                <img src="{% static 'images/gfx/dos-b.png' %}" alt="">
+                                            </div>
+                                            <div class="box6-text">
+                                                <h6 class="title">שתו הרבה מים</h6>
+                                                <p>שתיית מים מרובה מומלצת ונחוצה לתפקודנו התקין, בנוסף תורמת להורדת מפלס הלחץ.</p>
+                                            </div>
+                                        </div><!-- .box6 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box6 positive">
+                                            <div class="box6-gfx">
+                                                <img src="{% static 'images/gfx/dos-c.png' %}" alt="">
+                                            </div>
+                                            <div class="box6-text">
+                                                <h6 class="title">עטיית מסיכה</h6>
+                                                <p>כאשר יוצאים מהבית ו\או מתראים עם אנשים אחרים עלינו לעטות מסיכה בכל רגע נתון.</p>
+                                            </div>
+                                        </div><!-- .box6 -->
+                                    </div><!-- .col -->
+                                </div><!-- .row -->
+                            </div><!-- .col -->
+                            <div class="col-lg-6">
+                                <div class="row g-gs">
+                                    <div class="col-12">
+                                        <div class="box6 negative">
+                                            <div class="box6-gfx">
+                                                <img src="{% static 'images/gfx/donts-a.png' %}" alt="">
+                                            </div>
+                                            <div class="box6-text">
+                                                <h6 class="title">הימנעו ממגע קרוב</h6>
+                                                <p>יש לשמור על מרחק של 2 מטרים בין אדם לאדם.</p>
+                                            </div>
+                                        </div><!-- .box6 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box6 negative">
+                                            <div class="box6-gfx">
+                                                <img src="{% static 'images/gfx/donts-b.png' %}" alt="">
+                                            </div>
+                                            <div class="box6-text">
+                                                <h6 class="title">השתדלו לא לגעת בפנים</h6>
+                                                <p>דבר זה עלול להביא לחדירת הנגיף אל תוך מערכת הנשימה שלנו לאחר שבאנו במגע עם חפץ או משטח.</p>
+                                            </div>
+                                        </div><!-- .box6 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box6 negative">
+                                            <div class="box6-gfx">
+                                                <img src="{% static 'images/gfx/donts-c.png' %}" alt="">
+                                            </div>
+                                            <div class="box6-text">
+                                                <h6 class="title">מניעת התקהלויות</h6>
+                                                <p>יש לשמור על מניעת התקהלויות בשטח סגר ו\או בשטחים פתוחים של למעלה מעשרה אנשים.</p>
+                                            </div>
+                                        </div><!-- .box6 -->
+                                    </div><!-- .col -->
+                                </div><!-- .row -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .section-content -->
+                </div><!-- .container -->
+            </section><!-- .section -->
+
+            
+            <section class="section section-l bg-light section-advice has-overlay text-center" id="coping" center>
+                <div class="overlay shape shape-e text-center"></div><!-- Overlay Shape -->
+                <div class="container">
+                    <div class="section-content">
+                        <div class="row g-gs align-items-center">
+                            <div class="col-lg-7 text-center">
+                                <div class="row g-gs justify-content-center">
+                                    <div class="col-12 align-items-center">
+                                        <div class="box7">
+                                            <div class="box7-gfx">
+                                                <img src="{% static 'images/breathing.png' %}" alt="">
+                                            </div>
+                                            <div class="box7-content">
+                                                <h6 class="title">קחו הפסקה, תנשמו לעיתים קרובות</h6>
+                                                <P>קחו נשימות איטיות: פנימה דרך האף ואז נשמו לאט החוצה.
+                                                    נשימה איטית היא אחת הדרכים הטובות ביותר להורדת מתח, מכיוון שהיא מסמנת למוח שלך להרפות את גופך.</P>
+                                            </div>
+                                        </div><!-- .box7 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box7">
+                                            <div class="box7-gfx">
+                                                <img src="{% static 'images/network.png' %}" alt="">
+                                            </div>
+                                            <div class="box7-content">
+                                                <h6 class="title">התחברו עם אחרים</h6>
+                                                <P>לדבר עם אנשים שאתה סומך עליהם יכול לעזור. שמור על קשר קבוע עם אנשים הקרובים אליך. ספר להם איך אתה מרגיש ושתף את כל החששות.</P>
+                                            </div>
+                                        </div><!-- .box7 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box7">
+                                            <div class="box7-gfx">
+                                                <img src="{% static 'images/medicine.png' %}" alt="">
+                                            </div>
+                                            <div class="box7-content">
+                                                <h6 class="title">שימרו על שגרה בריאה</h6>
+                                                <P>קומו ותלכו לישון בשעות דומות בכל יום.
+                                                    אכלו ארוחות בריאות בזמנים קבועים.
+                                                    התעמלו בקביעות.
+                                                    הקצה זמן לעבודה וזמן למנוחה.
+                                                    פנו זמן לעשות דברים שאתם נהנים מהם.
+                                                    צאו להפסקות קבועות מפעילויות על המסך.
+                                                    </P>
+                                            </div>
+                                        </div><!-- .box7 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box7">
+                                            <div class="box7-gfx">
+                                                <img src="{% static 'images/hearts.png' %}" alt="">
+                                            </div>
+                                            <div class="box7-content">
+                                                <h6 class="title">היו חביבים עם עצמכם ואחרים</h6>
+                                                <P>אל תצפו מעצמכם ליותר מדי בימים קשים. קבלו כי בימים מסוימים אתם עשויים להיות פרודוקטיביים יותר מאחרים.
+
+                                                    נסו לצמצם את כמות הצפייה, הקריאה או האזנה לחדשות שגורמות לכם לחוש חרדה או מצוקה. חפשו את המידע העדכני ביותר ממקורות מהימנים בשעות ספציפיות ביום.
+                                                    
+                                                    עזרה לאחרים יכולה להיות טובה גם בשבילכם. אם אתם מסוגלים להציע תמיכה לאנשים בקהילה שלכם שעשויים להזדקק לה.
+                                                    </P>
+                                            </div>
+                                        </div><!-- .box7 -->
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <div class="box7">
+                                            <div class="box7-gfx">
+                                                <img src="{% static 'images/phone-ringing.png' %}" alt="">
+                                            </div>
+                                            <div class="box7-content">
+                                                <h6 class="title">פנו לעזרה אם אתם זקוקים לה</h6>
+                                                <P>אל תהססו לפנות לעזרה מקצועית אם אתם חושבים שאתם זקוקים לה. מקום טוב להתחיל בו הוא עובד הבריאות המקומי שלך. קווי עזרה יכולים גם להוות מקור תמיכה.</P>
+                                            </div>
+                                        </div><!-- .box7 -->
+                                    </div><!-- .col -->
+                                </div><!-- .row -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .section-content -->
+                </div><!-- .container -->
+            </section><!-- .section -->
+
+            <section class="section section-l bg-light section-contact" id="contact">
+                <div class="container">
+                    <div class="section-content text-center">
+                        <div class="row g-gs justify-content-between">
+                            <div class="col-lg-5">
+                                <div class="section-head-s2">
+                                    <h5 class="subtitle text-center">חולה חדש? </h5>
+                                    <h3 class="title title-sm text-center">שאלה לגבי COVID-19?</h3>
+                                    <p>ניתן ליצור קשר במוקדי התמיכה וקופות החולים</p>
+                                </div>
+                                <div class="contact-info">
+                                    <div class="contact-emergency">
+                                        <div class="h3 contact-emergency-number">מוקד משרד הבריאות *5400</div>
+                                        <div class="h3 contact-emergency-number">קופת חולים כללית *2700</div>
+                                        <div class="h3 contact-emergency-number">קופת חולים לאומית *507</div>
+                                        <div class="h3 contact-emergency-number">קופת חולים מכבי *3555</div>
+                                        <div class="h3 contact-emergency-number">קופת חולים מאוחדת *3833</div>
+                                    </div>
+                                </div>
+                            </div><!--.col -->
+                            <div class="col-lg-7">
+                                <div class="contact-form contact-form-boxed bg-white">
+                                    <h3 class="contact-form-title">חולה חדש\ה? אנא הזינו פרטים והיכנסו כבר עכשיו לסטטיסטיקות</h3>
+                                    <form action="/Staticov/indexcontact" method="POST" id="login-form" class="form form-login" autocomplete="off" role="main">
+                                    <fieldset>
+                                          {% csrf_token %}
+                                          <legend>הכנס נתונים על מנת להירשם</legend>
+                                          <div class="form-label">
+                                            <label for="userid">שם</label>
+                                            <input type="text" id="name" name="name" placeholder="...הזן שם שלך " class="form-control">
+                                          </div>
+                                          <div class="form-label">
+                                            <label for="name">תז</label>
+                                            <input type="text" id="taz" name="taz" placeholder="...הזן תז  " class="form-control">
+                                          </div>
+                                          <div class="form-label">
+                                              <label for="password">מספר טלפון</label>
+                                              <input type="text" id="telephone" name="telephone" placeholder="...הזן מס טלפון " class="form-control">
+                                          </div>
+                                          <div class="form-label">
+                                            <label for="age">גיל</label>
+                                            <input type="age" id="age" name="age" placeholder="...הזן גיל" class="form-control">
+                                        </div>
+                                          <div class="form-label">
+                                        <div class="form-label">
+                                                <label class="form-label" for="contact-symptom">מספר סימפטומים:</label>
+                                                <div class="form-labelk">
+                                                    <select id="symptomes" name="symptomes" class="form-control" placeholder="...הזן מס סימפטומים   ">
+                                                        <option selected></option>
+                                                        <option>אחד</option>
+                                                        <option>שתיים או יותר</option>
+                                                        <option>ללא</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>   
+                                    </fieldset>
+                                </br>
+                                    <button type="submit" class="btn btn-primary">המשך</button>
+                                </form>
+                                </div>
+                            </div>
+                        </div><!-- .row -->
+                    </div><!-- .section-content -->
+                </div><!-- .container -->
+            </section><!-- .section -->
+
+            <section class="section section-l bg-light section-spread pb-0 ov-h has-overlay" id="spread">
+                <div class="overlay bg-white h-40 bottom"></div><!-- Overlay Shape -->
+                <div class="container">
+                    <div class="section-head-s2 text-center wide-md">
+                        <h2 class="title">אודות המפתחים<br class="d-sm-none"></h2>
+                    </div><!-- .section-head -->
+                    <div class="section-content">
+                        <div class="row g-gs justify-content-center">
+                            <div class="col-md-8 col-lg-3">
+                                <div class="box box-alt">
+                                    <div class="box-gfx">
+                                        <img src="{%static 'images/keven_picture.png' %}" style="border-radius:50%; width: 130px; height: 130px; margin: 20px 60px;">
+                                    </div>
+                                    <div class="box-content text-center">
+                                        <h4 class="title text-center">קווין</h4>
+                                        <p>סטודנט שנה ב' להנדסת תוכנה במכללת SCE
+                                            ניסיון של שנתיים בתור מנהל צוות לפיתוח אתרים בword press 
+                                            ופרסום דיגיטלי 
+                                            בעל עסק עצמאי לבניית אתרים אישיים 
+                                            http://kevynkrancenblum.com</p>
+                                    </div>
+                                </div><!-- .box -->
+                            </div><!-- .col -->
+                            <div class="col-md-8 col-lg-3">
+                                <div class="box box-alt">
+                                    <div class="box-gfx">
+                                        <img src="{%static 'images/shir_picture.jpg' %}" style="border-radius:50%; width: 130px; height: 130px; margin: 20px 60px;">
+                                    </div>
+                                    <div class="box-content text-center">
+                                        <h4 class="title text-center">שיר</h4>
+                                        <p>סטודנטית שנה ב' להנדסת תוכנה במכללת SCE
+                                            כיום עובדת בצוות IT מערכות מידע בכימיקלים לישראל
+                                             יוצרת פרוייקטים אישיים בתחום המשחקים בשפת פיתוח Python</p>
+                                    </div>
+                                </div><!-- .box -->
+                            </div><!-- .col -->
+                            <div class="col-md-8 col-lg-3">
+                                <div class="box box-alt">
+                                    <div class="box-gfx">
+                                        <img src="{%static 'images/lior_picture.jpeg' %}" style="border-radius:50%; width: 130px; height: 130px; margin: 20px 60px;">
+                                    </div>
+                                    <div class="box-content text-center">
+                                        <h4 class="title text-center">ליאור</h4>
+                                        <p>סטודנט שנה ב' להנדסת תוכנה במכללת SCE
+                                            עבודה של שנתיים במעבדה לתיקון מחשבים
+                                            תיכון יצרתי פרוייקט של תוכנה לוקאלית בשפת c# 
+                                            פרוייקט נוסף של אפליקציה לאנדרואיד בשפת JAVA ו xml </p>
+                                    </div>
+                                </div><!-- .box -->
+                            </div><!-- .col -->
+                            <div class="col-md-8 col-lg-3">
+                                <div class="box box-alt">
+                                    <div class="box-gfx">
+                                        <img src="{%static 'images/liron_picture.jpeg' %}" style="border-radius:50%; width: 130px; height: 130px; margin: 20px 60px;">
+                                    </div>
+                                    <div class="box-content text-center">
+                                        <h4 class="title text-center">לירון</h4>
+                                        <p>סטודנט שנה ב' להנדסת תוכנה במכללת SCE 
+                                            עבדתי כטכנאי מחשבים ואחראי על תחזוקת רשת
+                                            כיום יוצר פרוייקטים אישיים בתחום התוכנה והעיצוב</p>
+                                    </div>
+                                </div><!-- .box -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .section-content -->
+                </div><!-- .container -->
+
+            </section><!-- .section -->
+            <section class="section section-m bg-accent tc-light section-call-to-action" id="cta">
+                <div class="container">
+                    <div class="section-content text-center">
+                        <div class="row g-gs justify-content-between align-items-center">
+                            <div class="col-lg-9">
+                                <div class="cta-content-block">
+                                    <div class="cta-content-icon">
+                                        <em class="icon ni ni-help-alt"></em>
+                                    </div>
+                                    <div class="cta-content-text">
+                                        <p><strong>הישארו בבית והתקשרו לרופא שלכם:</strong>  אם אתם חושבים שנחשפתם\ן ל- COVID-19 ומפתחים חום ותופעות כלשהן, כגון שיעול או קשיי נשימה, התקשרו לרופא המטפל לקבלת ייעוץ רפואי. </p>
+                                    </div>
+                                </div><!-- .text-block -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .section-content -->
+                </div><!-- .container -->
+            </section><!-- .section -->
+        </main><!-- .nk-pages -->
+
+	<!-- JavaScript -->
+	<script src="{% static 'assets/js/bundle.js' %}"></script>
+	<script src="{% static 'assets/js/scripts.js' %}"></script>
+</body>
+</html>
