@@ -1,0 +1,19 @@
+{% extends 'Restaurant/indexvip.html' %}
+{% block content%}
+    {%for item in Menu%}
+        <div class="row">
+        <div class="col-lg-6">
+        <h1 class="mb-5">{{item.name}}</h1>
+        <div class="row align-items-center mb-5">
+            <div class="col-4 col-sm-3">
+                <img class="w-100 rounded-circle mb-3 mb-sm-0" src="{%static 'HomepageS/img/{{item.photo}}'%}" alt="">
+                <h5 class="menu-price">${{item.price}}</h5>
+            </div>
+            <div class="col-8 col-sm-9">
+                <h4>Black Coffee</h4>
+                <p class="m-0">{{item.description}}/p>
+                <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 ">Order</a>
+            </div>
+    {%endfor%}
+</div>
+{%end block%}
